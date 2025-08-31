@@ -17,19 +17,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* GPay exact color palette - using RGB values */
-    --primary: 26 115 232;
-    --primary-foreground: 255 255 255;
-    
-    --gpay-blue: 26 115 232;
-    --gpay-blue-light: 66 133 244;
+    /* GPay exact dark theme colors from screenshots */
+    --gpay-dark-bg: 32 33 36;
+    --gpay-dark-surface: 48 49 52;
+    --gpay-dark-card: 66 68 72;
+    --gpay-white: 255 255 255;
     --gpay-green: 52 168 83;
-    --gpay-red: 234 67 53;
-    --gpay-gray: 241 243 244;
-    --gpay-text-primary: 32 33 36;
-    --gpay-text-secondary: 95 99 104;
-    --gpay-background: 255 255 255;
-    --gpay-surface: 248 249 250;
+    --gpay-blue: 66 133 244;
+    --gpay-text-primary: 255 255 255;
+    --gpay-text-secondary: 189 193 198;
+    --gpay-received: 52 168 83;
+    --gpay-border: 95 99 104;
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(211 100% 50%), hsl(199 89% 48%));

@@ -1,184 +1,196 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Card } from "@/components/ui/card";
-import { ArrowUpRight, ArrowDownLeft, User, Store, Car, ShoppingBag } from "lucide-react";
+import { Search, MoreVertical, ArrowLeft, ChevronDown, Check, Signal, Wifi, Battery } from "lucide-react";
 
 const MockupSection = () => {
   const transactions = [
     {
       id: 1,
-      type: "received",
-      description: "Priya Sharma",
-      subtext: "Money received",
-      amount: "+₹750",
-      date: "4:15 PM",
-      before: "₹2,000",
-      after: "₹2,750",
-      avatar: "PS",
-      avatarBg: "bg-green-500"
+      name: "GANESANPM",
+      date: "30 August",
+      amount: "₹28",
+      avatar: "G",
+      avatarColor: "bg-purple-500",
+      before: "₹1,500",
+      after: "₹1,472"
     },
     {
       id: 2,
-      type: "sent",
-      description: "Café Coffee Day",
-      subtext: "Food & drinks",
-      amount: "-₹120",
-      date: "2:45 PM",
-      before: "₹2,120",
-      after: "₹2,000",
-      avatar: "CD",
-      avatarBg: "bg-orange-500"
+      name: "LEGEND SARAVANA",
+      date: "29 August", 
+      amount: "₹190",
+      avatar: "L",
+      avatarColor: "bg-pink-500",
+      before: "₹1,662",
+      after: "₹1,472"
     },
     {
       id: 3,
-      type: "sent",
-      description: "Indian Oil",
-      subtext: "Fuel",
-      amount: "-₹800",
-      date: "Yesterday",
-      before: "₹2,920",
-      after: "₹2,120",
-      avatar: "IO",
-      avatarBg: "bg-red-500"
+      name: "ABIRAMI A",
+      date: "29 August",
+      amount: "+ ₹200",
+      avatar: "A",
+      avatarColor: "bg-gray-500",
+      isReceived: true,
+      before: "₹1,462",
+      after: "₹1,662"
     },
     {
       id: 4,
-      type: "sent",
-      description: "Amazon Pay",
-      subtext: "Shopping",
-      amount: "-₹1,250",
-      date: "Yesterday",
-      before: "₹4,170",
-      after: "₹2,920",
-      avatar: "A",
-      avatarBg: "bg-yellow-600"
+      name: "Fouziya Chikken Center",
+      date: "28 August",
+      amount: "₹30",
+      avatar: "F",
+      avatarColor: "bg-purple-500",
+      before: "₹1,492",
+      after: "₹1,462"
+    },
+    {
+      id: 5,
+      name: "NST FUELS",
+      date: "28 August",
+      amount: "₹100",
+      avatar: "N",
+      avatarColor: "bg-blue-500",
+      before: "₹1,592",
+      after: "₹1,492"
     }
   ];
 
   return (
-    <section className="py-20 bg-gpay-surface">
+    <section className="py-20 bg-gray-100">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gpay-text-primary">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               GPay Transaction History
             </h2>
-            <p className="text-xl text-gpay-text-secondary">
-              Enhanced with Before & After balance visibility
+            <p className="text-xl text-gray-600">
+              Exact GPay interface with Before & After balance feature
             </p>
           </div>
           
           <div className="max-w-sm mx-auto">
             {/* Phone Frame */}
-            <div className="bg-black rounded-[32px] p-2 shadow-2xl">
-              <div className="bg-gpay-background rounded-[24px] overflow-hidden">
+            <div className="bg-black rounded-[32px] p-1 shadow-2xl">
+              <div className="bg-gpay-dark-bg rounded-[28px] overflow-hidden text-gpay-text-primary">
+                
                 {/* Status Bar */}
-                <div className="h-6 bg-gpay-background flex items-center justify-between px-6 pt-2">
-                  <span className="text-xs font-medium text-gpay-text-primary">9:41</span>
+                <div className="flex items-center justify-between px-6 py-2 text-white text-sm">
+                  <span className="font-medium">11:26</span>
                   <div className="flex items-center space-x-1">
-                    <div className="w-4 h-2 bg-gpay-text-primary rounded-sm"></div>
-                  </div>
-                </div>
-                
-                {/* Header */}
-                <div className="px-4 py-4 border-b border-gpay-gray/50">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-8 h-8 flex items-center justify-center">
-                      <ArrowDownLeft className="w-5 h-5 text-gpay-text-secondary" />
+                    <div className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full flex items-center space-x-1">
+                      <div className="w-3 h-3 bg-white rounded-full"></div>
+                      <span>1 device</span>
                     </div>
-                    <h3 className="text-lg font-medium text-gpay-text-primary">Transaction history</h3>
+                    <Signal className="w-4 h-4" />
+                    <Wifi className="w-4 h-4" />
+                    <div className="text-green-400">$</div>
+                    <Battery className="w-5 h-5" />
+                    <span className="text-xs">47%</span>
                   </div>
                 </div>
-                
-                {/* Transactions */}
-                <div className="px-4 py-2">
-                  <p className="text-sm font-medium text-gpay-text-secondary mb-3 px-2">Today</p>
-                  
-                  {transactions.slice(0, 2).map((transaction) => (
-                    <div key={transaction.id} className="mb-1">
-                      <div className="flex items-center justify-between p-3 rounded-lg hover:bg-gpay-gray/30 transition-colors">
+
+                {/* Search Header */}
+                <div className="px-4 py-3">
+                  <div className="flex items-center bg-gpay-dark-surface rounded-full px-4 py-3">
+                    <ArrowLeft className="w-5 h-5 text-gray-300 mr-3" />
+                    <span className="text-gray-300 flex-1">Search transactions</span>
+                    <MoreVertical className="w-5 h-5 text-gray-300" />
+                  </div>
+                </div>
+
+                {/* Filter Buttons */}
+                <div className="px-4 pb-4 flex space-x-3">
+                  <div className="bg-gpay-dark-surface rounded-full px-4 py-2 flex items-center space-x-2">
+                    <span className="text-sm text-white">Status</span>
+                    <ChevronDown className="w-4 h-4 text-gray-300" />
+                  </div>
+                  <div className="bg-gpay-dark-surface rounded-full px-4 py-2 flex items-center space-x-2">
+                    <span className="text-sm text-white">Payment method</span>
+                    <ChevronDown className="w-4 h-4 text-gray-300" />
+                  </div>
+                  <div className="bg-gpay-dark-surface rounded-full px-4 py-2">
+                    <span className="text-sm text-white">Date</span>
+                  </div>
+                </div>
+
+                {/* Month Header */}
+                <div className="px-4 py-4 border-b border-gpay-border/20">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-gray-400">2025</div>
+                      <div className="text-2xl font-light text-white">August</div>
+                    </div>
+                    <div className="text-xl font-medium text-white">₹419.54</div>
+                  </div>
+                </div>
+
+                {/* Transactions List */}
+                <div className="px-4">
+                  {transactions.map((transaction, index) => (
+                    <div key={transaction.id}>
+                      {/* Transaction Row */}
+                      <div className="flex items-center justify-between py-4">
                         <div className="flex items-center space-x-3">
                           <Avatar className="w-10 h-10">
-                            <AvatarFallback className={`${transaction.avatarBg} text-white text-xs font-medium`}>
+                            <AvatarFallback className={`${transaction.avatarColor} text-white text-sm font-medium`}>
                               {transaction.avatar}
                             </AvatarFallback>
                           </Avatar>
                           <div>
-                            <p className="text-sm font-medium text-gpay-text-primary">{transaction.description}</p>
-                            <p className="text-xs text-gpay-text-secondary">{transaction.subtext}</p>
+                            <div className="text-white font-medium text-base">{transaction.name}</div>
+                            <div className="text-gray-400 text-sm">{transaction.date}</div>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <p className={`text-sm font-medium ${
-                            transaction.type === 'received' ? 'text-gpay-green' : 'text-gpay-text-primary'
-                          }`}>
-                            {transaction.amount}
-                          </p>
-                          <p className="text-xs text-gpay-text-secondary">{transaction.date}</p>
+                        <div className={`text-base font-medium ${
+                          transaction.isReceived ? 'text-gpay-received' : 'text-white'
+                        }`}>
+                          {transaction.amount}
                         </div>
                       </div>
-                      
-                      {/* New Feature: Balance Display */}
-                      <div className="ml-13 mr-3 mb-3 bg-blue-50 rounded-lg p-2 border-l-2 border-gpay-blue">
-                        <div className="flex justify-between text-xs">
-                          <span className="text-gpay-text-secondary">Before:</span>
-                          <span className="font-medium text-gpay-text-primary">{transaction.before}</span>
+
+                      {/* NEW FEATURE: Before & After Balance */}
+                      <div className="ml-13 mb-4 bg-blue-900/20 border border-blue-500/30 rounded-lg p-3">
+                        <div className="flex items-center mb-2">
+                          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
+                          <span className="text-xs text-blue-300 font-medium">Balance Impact</span>
                         </div>
-                        <div className="flex justify-between text-xs mt-1">
-                          <span className="text-gpay-text-secondary">After:</span>
-                          <span className="font-medium text-gpay-blue">{transaction.after}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  
-                  <p className="text-sm font-medium text-gpay-text-secondary mb-3 px-2 mt-4">Yesterday</p>
-                  
-                  {transactions.slice(2).map((transaction) => (
-                    <div key={transaction.id} className="mb-1">
-                      <div className="flex items-center justify-between p-3 rounded-lg hover:bg-gpay-gray/30 transition-colors">
-                        <div className="flex items-center space-x-3">
-                          <Avatar className="w-10 h-10">
-                            <AvatarFallback className={`${transaction.avatarBg} text-white text-xs font-medium`}>
-                              {transaction.avatar}
-                            </AvatarFallback>
-                          </Avatar>
-                          <div>
-                            <p className="text-sm font-medium text-gpay-text-primary">{transaction.description}</p>
-                            <p className="text-xs text-gpay-text-secondary">{transaction.subtext}</p>
+                        <div className="space-y-1">
+                          <div className="flex justify-between text-xs">
+                            <span className="text-gray-400">Before:</span>
+                            <span className="text-white font-medium">{transaction.before}</span>
+                          </div>
+                          <div className="flex justify-between text-xs">
+                            <span className="text-gray-400">After:</span>
+                            <span className="text-blue-300 font-medium">{transaction.after}</span>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <p className="text-sm font-medium text-gpay-text-primary">
-                            {transaction.amount}
-                          </p>
-                          <p className="text-xs text-gpay-text-secondary">{transaction.date}</p>
-                        </div>
                       </div>
-                      
-                      {/* New Feature: Balance Display */}
-                      <div className="ml-13 mr-3 mb-3 bg-blue-50 rounded-lg p-2 border-l-2 border-gpay-blue">
-                        <div className="flex justify-between text-xs">
-                          <span className="text-gpay-text-secondary">Before:</span>
-                          <span className="font-medium text-gpay-text-primary">{transaction.before}</span>
-                        </div>
-                        <div className="flex justify-between text-xs mt-1">
-                          <span className="text-gpay-text-secondary">After:</span>
-                          <span className="font-medium text-gpay-blue">{transaction.after}</span>
-                        </div>
-                      </div>
+
+                      {/* Separator line except for last item */}
+                      {index < transactions.length - 1 && (
+                        <div className="border-b border-gpay-border/10"></div>
+                      )}
                     </div>
                   ))}
                 </div>
-                
-                {/* Bottom padding */}
+
+                {/* Bottom spacing */}
                 <div className="h-6"></div>
               </div>
             </div>
-            
+
+            {/* Feature Highlight */}
             <div className="mt-6 text-center">
-              <p className="text-sm text-gpay-text-secondary bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                <span className="font-medium text-yellow-800">✨ New Feature:</span> Balance information now shows before and after each transaction
-              </p>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-center justify-center mb-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                  <span className="text-sm font-medium text-blue-900">✨ Enhanced Feature</span>
+                </div>
+                <p className="text-sm text-blue-700">
+                  "Balance Impact" cards show how each transaction affected your account balance - seamlessly integrated into GPay's existing design.
+                </p>
+              </div>
             </div>
           </div>
         </div>
