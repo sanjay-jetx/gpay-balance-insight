@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'gpay-blue': 'hsl(var(--gpay-blue))',
+				'gpay-blue-dark': 'hsl(var(--gpay-blue-dark))',
+				'gpay-green': 'hsl(var(--gpay-green))',
+				'gpay-red': 'hsl(var(--gpay-red))',
+				'gpay-gray': 'hsl(var(--gpay-gray))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +67,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-section': 'var(--gradient-section)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
